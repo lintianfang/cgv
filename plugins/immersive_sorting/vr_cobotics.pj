@@ -13,8 +13,8 @@ addIncDirs=[INPUT_DIR, CGV_DIR."/libs", CGV_DIR."/test", INPUT_DIR."/nng64/nng/i
 addLibDirs=[
     INPUT_DIR."/nng64/Debug",
 	INPUT_DIR."/nng64/Release",
-	INPUT_DIR."/protocbuf64/lib/debug",
-	INPUT_DIR."/protocbuf64/lib/release"
+	INPUT_DIR."/protocbuf64/libs/debug",
+	INPUT_DIR."/protocbuf64/libs/release"
 ];
 excludeSourceDirs=[INPUT_DIR."/protocbuf64" ];
 addDependencies=["nng", "gmock", "gmock_main", "libprotoc", "libprotobuf", "libprotobuf-lite", "libprotocd", "libprotobufd", "libprotobuf-lited"];
