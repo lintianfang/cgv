@@ -91,9 +91,9 @@ void vr_cobotics::compute_intersections(const vec3& origin, const vec3& directio
 			t_result, p_result, n_result, 0.000001f)) {
 
 			// transform result back to world coordinates
-			movable_box_rotations[i].rotate(p_result);
+			//movable_box_rotations[i].rotate(p_result);
 			p_result += movable_box_translations[i];
-			movable_box_rotations[i].rotate(n_result);
+			//movable_box_rotations[i].rotate(n_result);
 
 			// store intersection information
 			intersection_points.push_back(p_result);
@@ -443,7 +443,7 @@ bool vr_cobotics::handle(cgv::gui::event& e)
 				}
 				return true;
 			}
-			if (box_select_mode) {
+			
 				int ci = vrte.get_controller_index();
 				if (state[ci] == IS_NONE || state[ci] == IS_OVER) {
 					vec3 origin, direction;
@@ -470,8 +470,8 @@ bool vr_cobotics::handle(cgv::gui::event& e)
 					}*/
 					
 				}
-			}
-			if (trash_bin_select_mode) {
+			
+			/*if (trash_bin_select_mode) {
 				int ci = vrte.get_controller_index();
 				if (state[ci] == IS_NONE || state[ci] == IS_OVER) {
 					vec3 origin, direction;
@@ -489,7 +489,7 @@ bool vr_cobotics::handle(cgv::gui::event& e)
 					send_selection(movable_box_id.at(bi));
 					std::cout << "send a message about trash bin!" << bi << std::endl;
 				}
-			}
+			}*/
 		}
 		return true;
 	}

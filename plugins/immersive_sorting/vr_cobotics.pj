@@ -1,6 +1,9 @@
 @=
 projectType="application_plugin";
 projectName="vr_cobotics";
+@=
+projectType="application_plugin";
+projectName="vr_cobotics";
 //referenceDeps = 0;
 projectGUID="D4C8BB4D-D464-4D64-8390-131B0CE02732";
 addProjectDirs=[CGV_DIR."/plugins", CGV_DIR."/libs", CGV_DIR."/test"];
@@ -10,14 +13,17 @@ addProjectDeps=["cgv_utils", "cgv_type", "cgv_data", "cgv_base", "cgv_math",
 				"crg_vr_view", 
 				"cg_vr", "vr_emulator", "openvr_driver", "point_cloud"];
 addIncDirs=[INPUT_DIR, CGV_DIR."/libs", CGV_DIR."/test", INPUT_DIR."/nng64/nng/include", INPUT_DIR."/nng64/nngpp/include", INPUT_DIR."/protocbuf64/include"];
+
 addLibDirs=[
     INPUT_DIR."/nng64/Debug",
-	INPUT_DIR."/nng64/Release",
-	INPUT_DIR."/protocbuf64/libs/debug",
-	INPUT_DIR."/protocbuf64/libs/release"
+    INPUT_DIR."/nng64/Release",
+    INPUT_DIR."/protocbuf64/libs/debug",
+    INPUT_DIR."/protocbuf64/libs/release"
 ];
-excludeSourceDirs=[INPUT_DIR."/protocbuf64" ];
-addDependencies=["nng", "gmock", "gmock_main", "libprotoc", "libprotobuf", "libprotobuf-lite", "libprotocd", "libprotobufd", "libprotobuf-lited"];
+excludeSourceDirs=[INPUT_DIR."/protocbuf64"];
+addDependencies=["nng", "gmock", "gmock_main", "libprotoc", "libprotobuf", "libprotobuf-lite"];
+
+
 addCommandLineArguments=[
 	after("type(shader_config):shader_path='".INPUT_DIR.";".CGV_DIR."/libs/cgv_gl/glsl'","cg_fltk"),	'config:"'.INPUT_DIR.'/config.def"'
 ];
